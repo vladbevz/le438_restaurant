@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Carte - LE 438 - Vauvert</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav container">
+            <a href="index.html" class="nav__logo">
+                <img src="images/logo-le438-white.png" alt="Logo LE 438" class="logo-img">
+            </a>
+            <ul class="nav__menu">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="menu.html" class="active">La Carte</a></li>
+                <li><a href="contact.html">Infos & Contact</a></li>
+                <li><a href="tel:+33698327523" class="nav__cta"><i class="fas fa-phone"></i> 06 98 32 75 23</a></li>
+            </ul>
+            <button class="nav__toggle" aria-label="Menu mobile">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main class="menu-page">
+        <!-- Menu Header -->
+        <section class="menu-header section">
+            <div class="container">
+                <h1 class="menu-title">MENU LE 438</h1>
+                <p class="menu-subtitle">Uniquement bon</p>
+            </div>
+        </section>
+
+        <!-- Menu Content -->
+        <section class="menu-content section">
+            <div class="container">
+                <!-- PÂTES FRAÎCHES XXL -->
+                <div class="menu-category">
+                    <h2 class="category-title">PÂTES FRAÎCHES XXL AU CHOIX</h2>
+                    <p class="category-description">Sauces : Bolognaise, Tomates-Basilic, 4 Fromages, Pesto, Sauce du jour</p>
+                    <div class="price-tag">8€</div>
+                </div>
+
+                <!-- POKÉ BOWLS -->
+                <div class="menu-category">
+                    <h2 class="category-title">POKÉ BOWLS AU CHOIX</h2>
+                    <ul class="bowl-options">
+                        <li>Nem's Poulet / Porc / Crevettes</li>
+                        <li>Saumon Mariné / Saumossa</li>
+                        <li>Bœuf / Légumes</li>
+                        <li>Chicken Nuggets</li>
+                        <li>Mix Végétarien (Avocat, Mangue, Melon)</li>
+                    </ul>
+                    <div class="price-tag">8€</div>
+                </div>
+
+                <!-- PLAT DU JOUR -->
+                <div class="menu-category">
+                    <h2 class="category-title">PLAT DU JOUR</h2>
+                    <p class="category-description">Notre plat mijoté du jour, frais et savoureux</p>
+                    <div class="price-tag">9€</div>
+                </div>
+
+                <!-- OPTIONS -->
+                <div class="menu-options">
+                    <div class="option">
+                        <h3>+ BOISSON</h3>
+                        <p class="option-desc">(hors menu 2,50€)</p>
+                        <div class="option-price">1,50€</div>
+                    </div>
+                    <div class="option">
+                        <h3>+ DESSERT</h3>
+                        <p class="option-desc">Sundae ou dessert du jour<br>(hors menu 2,80€)</p>
+                        <div class="option-price">1,50€</div>
+                    </div>
+                </div>
+
+                <!-- Call to Action -->
+                <div class="menu-cta">
+                    <div class="reservation-note">
+                        <i class="fas fa-phone-alt"></i>
+                        <h3>POUR RÉSERVER OU COMMANDER</h3>
+                        <a href="tel:+33698327523" class="cta-phone">06 98 32 75 23</a>
+                    </div>
+                    <a href="index.html" class="btn btn--secondary">Retour à l'accueil</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__content">
+            <div class="footer__logo">
+                <img src="images/logo-le438-white.png" alt="Logo LE 438" width="150">
+            </div>
+            <div class="footer__info">
+                <p><strong>Horaires</strong><br>Lun - Ven : 11h - 15h<br>Fermé week-end et jours fériés</p>
+                <p><strong>Adresse</strong><br>Zone Industrielle, 30600 Vauvert</p>
+            </div>
+            <div class="footer__contact">
+                <a href="tel:+33698327523" class="footer__phone"><i class="fas fa-phone"></i> 06 98 32 75 23</a>
+                <p>Pour réserver, commander ou un devis traiteur.</p>
+                <div class="footer__social">
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p class="container">© 2024 LE 438 - Snack Restaurant Vauvert. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+        const navToggle = document.querySelector('.nav__toggle');
+        const navMenu = document.querySelector('.nav__menu');
+
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('nav__menu--visible');
+            navToggle.querySelector('i').classList.toggle('fa-bars');
+            navToggle.querySelector('i').classList.toggle('fa-times');
+        });
+    </script>
+</body>
+</html>
