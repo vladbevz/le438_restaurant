@@ -4,17 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - LE 438 - Vauvert</title>
-    <link rel="stylesheet" href="css/style.css">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/contact.css">
 </head>
 <body>
     <header class="header">
         <nav class="nav container">
             <a href="index.html" class="nav__logo">
-                <img src="images/logo-le438-white.png" alt="Logo LE 438" class="logo-img">
+                <img src="images/logo-header.PNG" alt="Logo LE 438" class="logo-img">
             </a>
             <ul class="nav__menu">
                 <li><a href="index.html">Accueil</a></li>
@@ -29,7 +31,6 @@
     </header>
 
     <main class="contact-page">
-        <!-- Contact Header -->
         <section class="contact-header section">
             <div class="container">
                 <h1 class="contact-title">Infos Pratiques & Contact</h1>
@@ -37,15 +38,12 @@
             </div>
         </section>
 
-        <!-- Contact Content -->
         <section class="contact-content section">
             <div class="container">
                 <div class="contact-grid">
                     <!-- Horaires -->
                     <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class="far fa-clock"></i>
-                        </div>
+                        <div class="contact-icon"><i class="far fa-clock"></i></div>
                         <h2 class="contact-card-title">Horaires d'ouverture</h2>
                         <div class="contact-info">
                             <div class="hours-item">
@@ -62,19 +60,14 @@
 
                     <!-- Adresse -->
                     <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
                         <h2 class="contact-card-title">Adresse</h2>
                         <div class="contact-info">
                             <p class="address">
                                 <strong>LE 438</strong><br>
-                                Zone Industrielle<br>
-                                30600 Vauvert
+                                438 Chem. d'Aubord,<br>30600 Vauvert
                             </p>
-                            <a href="https://maps.google.com/?q=Zone+Industrielle+30600+Vauvert" 
-                               target="_blank" 
-                               class="btn btn--map">
+                            <a href="https://maps.google.com/?q=Zone+Industrielle+30600+Vauvert" target="_blank" class="btn btn--map">
                                 <i class="fas fa-map"></i> Voir sur Google Maps
                             </a>
                         </div>
@@ -82,9 +75,7 @@
 
                     <!-- Contact -->
                     <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone-alt"></i>
-                        </div>
+                        <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
                         <h2 class="contact-card-title">Contact & Réservations</h2>
                         <div class="contact-info">
                             <div class="phone-item">
@@ -92,22 +83,19 @@
                                 <a href="tel:+33698327523" class="phone-link">06 98 32 75 23</a>
                             </div>
                             <p class="contact-note">
-                                Pour réserver une table, commander à emporter, 
-                                ou demander un devis traiteur.
+                                Pour réserver une table, commander à emporter, ou demander un devis traiteur.
                             </p>
                         </div>
                     </div>
 
                     <!-- Services -->
                     <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-concierge-bell"></i>
-                        </div>
+                        <div class="contact-icon"><i class="fas fa-concierge-bell"></i></div>
                         <h2 class="contact-card-title">Nos Services</h2>
                         <div class="contact-info">
                             <ul class="services-list">
                                 <li><i class="fas fa-check"></i> Service sur place</li>
-                                <li><i class="fas fa-check"></i> Mini-terrasse</li>
+                                <li><i class="fas fa-check"></i> Terrasse</li>
                                 <li><i class="fas fa-check"></i> À emporter</li>
                                 <li><i class="fas fa-check"></i> Traiteur entreprise</li>
                                 <li><i class="fas fa-hourglass-half"></i> Livraison (bientôt)</li>
@@ -127,7 +115,6 @@
                     </div>
                 </div>
 
-                <!-- Retour à l'accueil -->
                 <div class="back-home">
                     <a href="index.html" class="btn btn--secondary">
                         <i class="fas fa-arrow-left"></i> Retour à l'accueil
@@ -140,35 +127,29 @@
     <footer class="footer">
         <div class="container footer__content">
             <div class="footer__logo">
-                <img src="images/logo-le438-white.png" alt="Logo LE 438" width="150">
+                <img src="images/logo-header.PNG" alt="Logo LE 438" width="150">
             </div>
             <div class="footer__info">
                 <p><strong>Horaires</strong><br>Lun - Ven : 11h - 15h<br>Fermé week-end et jours fériés</p>
-                <p><strong>Adresse</strong><br>Zone Industrielle, 30600 Vauvert</p>
+                <p><strong>Adresse</strong><br>438 Chem. d'Aubord, 30600 Vauvert</p>
             </div>
             <div class="footer__contact">
                 <a href="tel:+33698327523" class="footer__phone"><i class="fas fa-phone"></i> 06 98 32 75 23</a>
                 <p>Pour réserver, commander ou un devis traiteur.</p>
                 <div class="footer__social">
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/le438_vauvert/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/people/LE-438/61555530661269/" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.tripadvisor.fr/Restaurant_Review-g652719-d27183977-Reviews-LE_438-Vauvert_Gard_Occitanie.html" target="_blank"><i class="fa-solid fa-utensils"></i></a>
                 </div>
             </div>
         </div>
         <div class="footer__bottom">
-            <p class="container">© 2024 LE 438 - Snack Restaurant Vauvert. Tous droits réservés.</p>
+            <p class="container">© 2026 LE 438 - Snack Restaurant Vauvert. Tous droits réservés.</p>
+            <p>Site créé par <a class="creator-link" href="https://ateliercode.fr" target="_blank">AtelierCode</a></p>
         </div>
     </footer>
 
-    <script>
-        const navToggle = document.querySelector('.nav__toggle');
-        const navMenu = document.querySelector('.nav__menu');
-
-        navToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('nav__menu--visible');
-            navToggle.querySelector('i').classList.toggle('fa-bars');
-            navToggle.querySelector('i').classList.toggle('fa-times');
-        });
-    </script>
+    <script src="js/config.js"></script>
+    <script src="js/modules/navigation.js"></script>
 </body>
 </html>

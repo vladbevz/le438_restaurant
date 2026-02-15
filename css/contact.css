@@ -1,0 +1,398 @@
+/* ===== CONTACT PAGE ===== */
+.contact-page {
+    padding-top: calc(var(--header-height) + 40px);
+    background-color: #000000;
+}
+
+/* ===== HEADER ===== */
+.contact-header {
+    text-align: center;
+    padding: 40px 0 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 40px;
+}
+
+.contact-title {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 3.5rem;
+    letter-spacing: 3px;
+    color: #ffffff;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.contact-subtitle {
+    font-size: 1rem;
+    color: #aaa;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+/* ===== GRID ===== */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-bottom: 50px;
+}
+
+/* ===== CARD ===== */
+.contact-card {
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 25px 20px;
+    transition: all 0.3s ease;
+}
+
+.contact-card:hover {
+    border-color: #8b0000;
+    transform: translateY(-5px);
+    background-color: rgba(139, 0, 0, 0.03);
+}
+
+.contact-icon {
+    font-size: 2.2rem;
+    color: #ffffff;
+    margin-bottom: 15px;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+.contact-card:hover .contact-icon {
+    color: #8b0000;
+}
+
+.contact-card-title {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.6rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 400;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 12px;
+}
+
+.contact-card:hover .contact-card-title {
+    border-bottom-color: rgba(139, 0, 0, 0.3);
+}
+
+.contact-info {
+    color: #bbb;
+    font-size: 1rem;
+}
+
+/* ===== HORAIRES ===== */
+.hours-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.hours-item:last-of-type {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.hours-item.closed .time {
+    color: #666;
+}
+
+.day {
+    font-weight: 500;
+    color: #ffffff;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+}
+
+.time {
+    font-weight: 500;
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+.note {
+    margin-top: 15px;
+    font-size: 0.85rem;
+    color: #777;
+    font-style: italic;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ===== ADRESSE ===== */
+.address {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #bbb;
+}
+
+.address strong {
+    color: #ffffff;
+    font-size: 1.2rem;
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+/* ===== CONTACT ===== */
+.phone-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid rgba(139, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.phone-item:hover {
+    border-color: #8b0000;
+    background-color: rgba(139, 0, 0, 0.05);
+}
+
+.phone-item i {
+    font-size: 1.1rem;
+    color: #8b0000;
+}
+
+.phone-link {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #ffffff;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+}
+
+.phone-link:hover {
+    color: #8b0000;
+}
+
+.contact-note {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #999;
+}
+
+/* ===== SERVICES ===== */
+.services-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.services-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    color: #bbb;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.services-list li:hover {
+    color: #ffffff;
+}
+
+.services-list i {
+    width: 18px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.services-list .fa-check {
+    color: #8b0000;
+}
+
+.services-list .fa-hourglass-half {
+    color: #666;
+}
+
+/* ===== CTA ===== */
+.contact-cta {
+    background-color: transparent;
+    border: 1px solid rgba(139, 0, 0, 0.2);
+    padding: 40px 35px;
+    text-align: center;
+    margin: 40px 0 20px;
+    transition: all 0.3s ease;
+}
+
+.contact-cta:hover {
+    border-color: #8b0000;
+    background-color: rgba(139, 0, 0, 0.02);
+}
+
+.cta-content h2 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2.2rem;
+    color: #ffffff;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.contact-cta:hover .cta-content h2 {
+    color: #8b0000;
+}
+
+.cta-content p {
+    color: #aaa;
+    font-size: 1rem;
+    margin-bottom: 25px;
+    font-weight: 300;
+}
+
+/* ===== BACK HOME ===== */
+.back-home {
+    text-align: center;
+    padding: 30px 0 50px;
+}
+
+.back-home .btn {
+    border-color: rgba(255, 255, 255, 0.2);
+    padding: 15px 35px;
+    font-size: 0.9rem;
+}
+
+.back-home .btn:hover {
+    border-color: #8b0000;
+}
+
+/* ===== BUTTONS ===== */
+.btn--map {
+    background-color: transparent;
+    border: 1px solid rgba(139, 0, 0, 0.3);
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 0.85rem;
+    width: 100%;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.btn--map:hover {
+    background-color: #8b0000;
+    border-color: #8b0000;
+    transform: translateY(-2px);
+}
+
+.btn--call {
+    background-color: #8b0000;
+    border: 1px solid #8b0000;
+    color: #ffffff;
+    padding: 12px 35px;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.btn--call:hover {
+    background-color: #6b0000;
+    border-color: #6b0000;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(139, 0, 0, 0.2);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+    .contact-title {
+        font-size: 3rem;
+    }
+    
+    .contact-grid {
+        gap: 20px;
+    }
+    
+    .contact-card {
+        padding: 22px 18px;
+    }
+    
+    .contact-card-title {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-header {
+        padding: 30px 0 20px;
+        margin-bottom: 30px;
+    }
+    
+    .contact-title {
+        font-size: 2.5rem;
+    }
+    
+    .contact-subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .contact-card {
+        padding: 25px 20px;
+    }
+    
+    .contact-card-title {
+        font-size: 1.5rem;
+    }
+    
+    .contact-cta {
+        padding: 35px 25px;
+    }
+    
+    .cta-content h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .contact-title {
+        font-size: 2.2rem;
+    }
+    
+    .contact-subtitle {
+        font-size: 0.8rem;
+    }
+    
+    .contact-card {
+        padding: 20px 15px;
+    }
+    
+    .contact-card-title {
+        font-size: 1.4rem;
+    }
+    
+    .phone-item {
+        flex-direction: row;
+        padding: 10px;
+    }
+    
+    .phone-link {
+        font-size: 1.1rem;
+    }
+    
+    .cta-content h2 {
+        font-size: 1.8rem;
+    }
+    
+    .contact-cta {
+        padding: 30px 20px;
+    }
+}
