@@ -10,18 +10,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
 
-
-    <!-- Icons - Bootstrap Icons (з TripAdvisor) -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <!-- Icons - Font Awesome 5 (стабільна версія з TripAdvisor) -->
+    <!-- Icons - Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Icons - Font Awesome 5 -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
     
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/index.css">
-    
-    <!-- Google Maps API -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSoSw7RAlDDZaIddEzK53bS-xe44M8W1o&libraries=places&callback=initMap" async defer></script>
 </head>
 <body>
     <header class="header">
@@ -30,9 +26,9 @@
                 <img src="images/logo-header.PNG" alt="Logo LE 438">
             </a>
             <ul class="nav__menu">
-                <li><a href="index.html" class="active">Accueil</a></li>
+                <li><a href="index.html">Accueil</a></li>
                 <li><a href="menu.html">La Carte</a></li>
-                <li><a href="contact.html">Infos & Contact</a></li>
+                <li><a href="contact.html" class="active">Infos & Contact</a></li>
                 <li><a href="tel:+33698327523" class="nav__cta"><i class="fas fa-phone"></i> 06 98 32 75 23</a></li>
             </ul>
             <button class="nav__toggle" aria-label="Menu mobile">
@@ -42,16 +38,22 @@
     </header>
 
     <main>
-        <section class="hero">
-            <div class="hero__content container">
-                <a href="menu.html" class="btn btn--primary">Voir le menu</a>
-            </div>
-        </section>
+       <section class="hero">
+    <div class="hero__content container">
+        <h1 class="hero__title">LE 438</h1>
+        <p class="hero__subtitle">Simplement bon</p>
+        <div class="hero__separator"></div>
+        <p class="hero__description">Pâtes fraîches • Poké Bowls • Burgers • Plat du jour</p>
+        <p class="hero__hours">DU LUNDI AU VENDREDI 11H - 15H</p>
+        <a href="menu.html" class="btn btn--primary">VOIR LE MENU</a>
+    </div>
+</section>
 
         <section class="intro section container">
             <h2 class="section__title">Une pause gourmande à Vauvert</h2>
             <p class="intro__text">
-                Situé à Vauvert, LE 438 est l’adresse idéale pour une pause déjeuner simple et savoureuse. Pâtes fraîches XXL, poké bowls faits sur mesure et plat du jour cuisiné maison. À déguster sur notre mini-terrasse, à emporter ou bientôt en livraison. Pensé pour vous comme pour les entreprises.
+                Situé à Vauvert, LE 438 est l’adresse idéale pour une pause déjeuner gourmande et authentique.
+Pâtes fraîches XXL, poké bowls composés sur mesure, burgers généreux et plat du jour cuisiné maison : ici, tout est préparé avec soin et générosité. À savourer sur notre terrasse, à emporter ou prochainement en livraison. Une adresse pensée aussi bien pour vos pauses personnelles que pour les déjeuners d’entreprise.
             </p>
         </section>
 
@@ -89,14 +91,14 @@
                     </div>
                 </article>
                 <article class="preview__item">
-                    <div class="preview__image" style="background-image: url('/images/bowls.webp');"></div>
+                    <div class="preview__image" style="background-image: url('/images/pokebowl.webp');"></div>
                     <div class="preview__content">
                         <h3>Poké Bowls</h3>
                         <p class="preview__price">À partir de 8€</p>
                     </div>
                 </article>
                 <article class="preview__item">
-                    <div class="preview__image" style="background-image: url('/images/plat.webp');"></div>
+                    <div class="preview__image" style="background-image: url('/images/platdujour.webp');"></div>
                     <div class="preview__content">
                         <h3>Plat du Jour</h3>
                         <p class="preview__price">À partir de 9€</p>
@@ -112,10 +114,18 @@
             <div class="container">
                 <h2 class="section__title">Notre emplacement</h2>
                 <div class="location__map">
-                    <div id="map-with-reviews"></div>
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2887.3!2d4.276!3d43.6959!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b18583f6262992%3A0x4046df8e1d8c0!2s438%20Chem.%20d%27Aubord%2C%2030600%20Vauvert!5e0!3m2!1sfr!2sfr!4v1700000000000!5m2!1sfr!2sfr" 
+                        width="100%" 
+                        height="400" 
+                        style="border:0; border-radius: 8px; border: 2px solid rgba(200, 90, 63, 0.2);" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
                     <div class="location__info">
-                        <p><i class="fas fa-map-marker-alt"></i> 438 Chem. d'Aubord, 30600 Vauvert</p>
-                        <a href="https://maps.google.com/?q=Zone+Industrielle+30600+Vauvert" target="_blank" class="btn btn--secondary">Ouvrir dans Google Maps</a>
+                        <p><i class="fas fa-map-marker-alt" style="color: var(--terracotta);"></i> 438 Chem. d'Aubord, 30600 Vauvert</p>
+                        <a href="https://maps.google.com/?q=438+Chem.+d%27Aubord+30600+Vauvert" target="_blank" class="btn btn--secondary">Ouvrir dans Google Maps</a>
                     </div>
                 </div>
             </div>
@@ -135,18 +145,18 @@
                 <a href="tel:+33698327523" class="footer__phone"><i class="fas fa-phone"></i> 06 98 32 75 23</a>
                 <p>Pour réserver, commander ou un devis traiteur.</p>
                 <div class="footer__social">
-                    <a href="https://www.instagram.com/le438_vauvert/" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.facebook.com/people/LE-438/61555530661269/" target="_blank"><i class="fab fa-facebook"></i></a>
-                    <a href="https://www.tripadvisor.fr/Restaurant_Review-g1580906-d26336217-Reviews-Le_438-Vauvert_Gard_Occitanie.html" target="_blank"><i class="fa-solid fa-utensils"></i></a>
+                    <a href="https://www.instagram.com/le_438_vauvert/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/p/Le-438-100093202087552/" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.tripadvisor.fr/Restaurant_Review-g1580906-d26336217-Reviews-Le_438-Vauvert_Gard_Occitanie.html" target="_blank"><i class="fas fa-utensils"></i></a>
                 </div>
             </div>
         </div>
         <div class="footer__bottom">
-            <p class="container">© 2026 438 - Snack Restaurant Vauvert. Tous droits réservés.</p>
+            <p class="container">© 2026 LE 438 - Snack Restaurant Vauvert. Tous droits réservés.</p>
             <p>Site créé par <a class="creator-link" href="https://ateliercode.fr" target="_blank">AtelierCode</a></p>
         </div>
     </footer>
-
-    <script src="js/index.js"></script>
+    <script src="js/config.js"></script>
+<script src="js/navigation.js"></script>
 </body>
 </html>

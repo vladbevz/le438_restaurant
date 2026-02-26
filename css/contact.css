@@ -19,15 +19,16 @@
     color: #ffffff;
     margin-bottom: 10px;
     text-transform: uppercase;
-    font-weight: 400;
+    /* Видалено font-weight: 400; */
 }
 
 .contact-subtitle {
-    font-size: 1rem;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.2rem;
     color: #aaa;
     letter-spacing: 2px;
     text-transform: uppercase;
-    font-weight: 300;
+    /* Видалено font-weight: 300; */
 }
 
 /* ===== GRID ===== */
@@ -47,9 +48,9 @@
 }
 
 .contact-card:hover {
-    border-color: #8b0000;
+    border-color: var(--terracotta);
     transform: translateY(-5px);
-    background-color: rgba(139, 0, 0, 0.03);
+    background-color: rgba(189, 63, 39, 0.03);
 }
 
 .contact-icon {
@@ -61,7 +62,7 @@
 }
 
 .contact-card:hover .contact-icon {
-    color: #8b0000;
+    color: var(--terracotta);
 }
 
 .contact-card-title {
@@ -71,14 +72,14 @@
     margin-bottom: 20px;
     letter-spacing: 1px;
     text-transform: uppercase;
-    font-weight: 400;
+    /* Видалено font-weight: 400; */
     text-align: center;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     padding-bottom: 12px;
 }
 
 .contact-card:hover .contact-card-title {
-    border-bottom-color: rgba(139, 0, 0, 0.3);
+    border-bottom-color: rgba(189, 63, 39, 0.3);
 }
 
 .contact-info {
@@ -106,16 +107,18 @@
 }
 
 .day {
-    font-weight: 500;
+    font-family: 'Bebas Neue', cursive;
     color: #ffffff;
-    font-size: 1rem;
+    font-size: 1.1rem;
     letter-spacing: 0.5px;
+    /* Видалено font-weight: 500; */
 }
 
 .time {
-    font-weight: 500;
+    font-family: 'Bebas Neue', cursive;
     color: #ffffff;
-    font-size: 1rem;
+    font-size: 1.1rem;
+    /* Видалено font-weight: 500; */
 }
 
 .note {
@@ -129,6 +132,8 @@
 
 /* ===== ADRESSE ===== */
 .address {
+    align-items: center;
+    text-align: center;
     font-size: 1rem;
     line-height: 1.6;
     margin-bottom: 20px;
@@ -136,11 +141,12 @@
 }
 
 .address strong {
+    font-family: 'Bebas Neue', cursive;
     color: #ffffff;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     display: block;
     margin-bottom: 8px;
-    font-weight: 600;
+    /* Видалено font-weight: 600; */
 }
 
 /* ===== CONTACT ===== */
@@ -151,31 +157,32 @@
     gap: 10px;
     margin-bottom: 20px;
     padding: 10px;
-    border: 1px solid rgba(139, 0, 0, 0.2);
+    border: 1px solid rgba(189, 63, 39, 0.2);
     transition: all 0.3s ease;
 }
 
 .phone-item:hover {
-    border-color: #8b0000;
-    background-color: rgba(139, 0, 0, 0.05);
+    border-color: var(--terracotta);
+    background-color: rgba(189, 63, 39, 0.05);
 }
 
 .phone-item i {
     font-size: 1.1rem;
-    color: #8b0000;
+    color: var(--terracotta);
 }
 
 .phone-link {
-    font-size: 1.2rem;
-    font-weight: 600;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.3rem;
     color: #ffffff;
     text-decoration: none;
     letter-spacing: 0.5px;
     transition: color 0.3s ease;
+    /* Видалено font-weight: 600; */
 }
 
 .phone-link:hover {
-    color: #8b0000;
+    color: var(--terracotta);
 }
 
 .contact-note {
@@ -212,7 +219,7 @@
 }
 
 .services-list .fa-check {
-    color: #8b0000;
+    color: var(--terracotta);
 }
 
 .services-list .fa-hourglass-half {
@@ -222,7 +229,7 @@
 /* ===== CTA ===== */
 .contact-cta {
     background-color: transparent;
-    border: 1px solid rgba(139, 0, 0, 0.2);
+    border: 1px solid rgba(189, 63, 39, 0.2);
     padding: 40px 35px;
     text-align: center;
     margin: 40px 0 20px;
@@ -230,8 +237,8 @@
 }
 
 .contact-cta:hover {
-    border-color: #8b0000;
-    background-color: rgba(139, 0, 0, 0.02);
+    border-color: var(--terracotta);
+    background-color: rgba(189, 63, 39, 0.02);
 }
 
 .cta-content h2 {
@@ -241,12 +248,12 @@
     margin-bottom: 15px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    font-weight: 400;
+    /* Видалено font-weight: 400; */
     transition: color 0.3s ease;
 }
 
 .contact-cta:hover .cta-content h2 {
-    color: #8b0000;
+    color: var(--terracotta);
 }
 
 .cta-content p {
@@ -269,42 +276,44 @@
 }
 
 .back-home .btn:hover {
-    border-color: #8b0000;
+    border-color: var(--terracotta);
 }
 
 /* ===== BUTTONS ===== */
 .btn--map {
     background-color: transparent;
-    border: 1px solid rgba(139, 0, 0, 0.3);
+    border: 1px solid rgba(189, 63, 39, 0.3);
     color: #ffffff;
     padding: 10px 20px;
-    font-size: 0.85rem;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1rem;
     width: 100%;
     letter-spacing: 1px;
     transition: all 0.3s ease;
 }
 
 .btn--map:hover {
-    background-color: #8b0000;
-    border-color: #8b0000;
+    background-color: var(--terracotta);
+    border-color: var(--terracotta);
     transform: translateY(-2px);
 }
 
 .btn--call {
-    background-color: #8b0000;
-    border: 1px solid #8b0000;
+    background-color: var(--terracotta);
+    border: 1px solid var(--terracotta);
     color: #ffffff;
     padding: 12px 35px;
-    font-size: 0.95rem;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.2rem;
     letter-spacing: 1px;
     transition: all 0.3s ease;
 }
 
 .btn--call:hover {
-    background-color: #6b0000;
-    border-color: #6b0000;
+    background-color: var(--terracotta-dark);
+    border-color: var(--terracotta-dark);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(139, 0, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(189, 63, 39, 0.2);
 }
 
 /* ===== RESPONSIVE ===== */
@@ -337,7 +346,7 @@
     }
     
     .contact-subtitle {
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
     
     .contact-grid {
@@ -368,7 +377,7 @@
     }
     
     .contact-subtitle {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
     }
     
     .contact-card {
@@ -385,7 +394,7 @@
     }
     
     .phone-link {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
     }
     
     .cta-content h2 {

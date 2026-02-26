@@ -10,7 +10,7 @@ html {
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Bebas Neue', cursive;
     background-color: #000000;
     color: #ffffff;
     line-height: 1.6;
@@ -26,16 +26,36 @@ body {
 
 .section {
     padding: 80px 0;
+    position: relative;
 }
 
 .section__title {
     font-family: 'Bebas Neue', cursive;
-    font-size: 2.8rem;
+    font-size: 3.2rem;
     text-align: center;
     margin-bottom: 3rem;
-    letter-spacing: 2px;
+    letter-spacing: 4px;
     color: #fff;
     text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.section__title::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--terracotta);
+    transition: width 0.3s ease;
+}
+
+.section:hover .section__title::after {
+    width: 120px;
 }
 
 .text-center {
@@ -44,59 +64,174 @@ body {
 
 /* ===== КОЛЬОРИ ===== */
 :root {
-    --dark-red: #8B0000;
-    --light-red: #B22222;
+    --terracotta: #bd3f27;
+    --terracotta-light: #d45f47;
+    --terracotta-dark: #9c3522;
+    --terracotta-soft: rgba(200, 90, 63, 0.1);
     --white: #ffffff;
     --black: #000000;
     --gray: #888888;
     --gray-light: #bbb;
     --gray-dark: #333;
     --header-height: 110px;
+    --gold: #C6A43F;
 }
 
 /* ===== ТИПОГРАФІЯ ===== */
-h1, h2, h3 {
-    font-weight: 600;
-    line-height: 1.2;
+h1, h2, h3, h4 {
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 2px;
+
+}
+h1 {
+    font-size: 5rem;
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+h3 {
+    font-size: 2rem;
 }
 
 a {
     text-decoration: none;
     color: inherit;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 ul {
     list-style: none;
 }
 
+/* ===== ПРЕМІАЛЬНІ АНІМАЦІЇ ===== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes glowPulse {
+    0% {
+        box-shadow: 0 0 5px rgba(200, 90, 63, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(200, 90, 63, 0.6);
+    }
+    100% {
+        box-shadow: 0 0 5px rgba(200, 90, 63, 0.3);
+    }
+}
+
+.animate-on-scroll {
+    opacity: 0;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.animate-fadeInUp {
+    animation-name: fadeInUp;
+}
+
+.animate-scaleIn {
+    animation-name: scaleIn;
+}
+
+.animate-slideInLeft {
+    animation-name: slideInLeft;
+}
+
+.animate-slideInRight {
+    animation-name: slideInRight;
+}
+
 /* ===== КНОПКИ ===== */
 .btn {
     display: inline-block;
-    padding: 15px 35px;
+    padding: 16px 38px;
     border-radius: 0;
+     font-family: 'Bebas Neue', cursive;
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     cursor: pointer;
     border: 2px solid var(--white);
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     background-color: transparent;
     color: var(--white);
     font-family: 'Montserrat', sans-serif;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--terracotta);
+    transition: left 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    z-index: -1;
+}
+
+.btn:hover::before {
+    left: 0;
 }
 
 .btn:hover {
-    background-color: var(--dark-red);
     color: var(--white);
-    border-color: var(--dark-red);
-    transform: translateY(-2px);
+    border-color: var(--terracotta);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(200, 90, 63, 0.3);
 }
 
 .btn--primary {
     border-color: var(--white);
-    background-color: #000;
+    background-color: transparent;
 }
 
 .btn--secondary {
@@ -104,33 +239,40 @@ ul {
 }
 
 .btn--secondary:hover {
-    background-color: var(--dark-red);
-    border-color: var(--dark-red);
+    border-color: var(--terracotta);
 }
 
 .btn--map {
-    background-color: var(--dark-red);
-    border-color: var(--dark-red);
+    background-color: var(--terracotta);
+    border-color: var(--terracotta);
     color: var(--white);
     margin-top: 15px;
 }
 
+.btn--map::before {
+    background: var(--terracotta-dark);
+}
+
 .btn--map:hover {
-    background-color: var(--light-red);
-    border-color: var(--light-red);
+    background-color: var(--terracotta-dark);
+    border-color: var(--terracotta-dark);
 }
 
 .btn--call {
-    background-color: var(--dark-red);
-    border-color: var(--dark-red);
+    background-color: var(--terracotta);
+    border-color: var(--terracotta);
     color: var(--white);
     font-size: 1.1rem;
     padding: 18px 40px;
 }
 
+.btn--call::before {
+    background: var(--terracotta-dark);
+}
+
 .btn--call:hover {
-    background-color: var(--light-red);
-    border-color: var(--light-red);
+    background-color: var(--terracotta-dark);
+    border-color: var(--terracotta-dark);
 }
 
 /* ===== HEADER & NAV ===== */
@@ -143,8 +285,15 @@ ul {
     background-color: rgba(0, 0, 0, 0.95);
     backdrop-filter: blur(10px);
     padding: 15px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(200, 90, 63, 0.2);
     height: var(--header-height);
+    transition: all 0.3s ease;
+}
+
+.header.scrolled {
+    padding: 10px 0;
+    background-color: rgba(0, 0, 0, 0.98);
+    border-bottom-color: var(--terracotta);
 }
 
 .nav {
@@ -157,6 +306,13 @@ ul {
 .nav__logo img {
     height: 75px;
     width: auto;
+    transition: all 0.3s ease;
+    filter: brightness(1);
+}
+
+.nav__logo:hover img {
+    transform: scale(1.05);
+    filter: brightness(1.1);
 }
 
 .nav__menu {
@@ -166,9 +322,10 @@ ul {
 }
 
 .nav__menu a {
+    font-family: 'Bebas Neue', cursive;
     font-weight: 500;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
     text-transform: uppercase;
     position: relative;
     padding: 5px 0;
@@ -185,11 +342,28 @@ ul {
     left: 0;
     width: 100%;
     height: 2px;
-    background-color: var(--dark-red);
+    background-color: var(--terracotta);
+    transition: all 0.3s ease;
 }
 
 .nav__menu a:not(.nav__phone):hover {
-    color: var(--dark-red);
+    color: var(--terracotta);
+}
+
+.nav__menu a:not(.nav__phone)::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: var(--terracotta);
+    transition: width 0.3s ease;
+}
+
+.nav__menu a:not(.nav__phone):hover::after {
+    width: 100%;
 }
 
 .nav__phone,
@@ -204,12 +378,18 @@ ul {
     font-size: 0.9rem;
     letter-spacing: 1px;
     transition: all 0.3s ease;
+    /* border: 1px solid rgba(200, 90, 63, 0.3); */
 }
 
 .nav__phone:hover,
 .nav__cta:hover {
-    color: var(--dark-red);
+    color: var(--terracotta) !important;
+    border-color: var(--terracotta);
     transform: translateY(-2px);
+    background-color: rgba(200, 90, 63, 0.1);
+}
+.nav__phone i {
+    transform: none; /* або scale(1) */
 }
 
 .nav__toggle {
@@ -220,57 +400,94 @@ ul {
     font-size: 1.5rem;
     cursor: pointer;
     z-index: 1001;
+    transition: color 0.3s ease;
+}
+
+.nav__toggle:hover {
+    color: var(--terracotta);
 }
 
 /* ===== FOOTER ===== */
 .footer {
     background-color: #080808;
     padding-top: 60px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 2px solid var(--terracotta);
+    position: relative;
+    overflow: hidden;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--terracotta), transparent);
 }
 
 .footer__content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 40px;
-    margin-bottom: 40px;
+    position: relative;
+    z-index: 1;
 }
 
 .footer__logo img {
     opacity: 0.9;
+    transition: all 0.3s ease;
+    filter: brightness(1);
+}
+
+.footer__logo:hover img {
+    opacity: 1;
+    transform: scale(1.05);
+    filter: brightness(1.1);
 }
 
 .footer__info p {
     margin-bottom: 20px;
     color: #bbb;
     font-weight: 300;
+    transition: color 0.3s ease;
+}
+
+.footer__info p:hover {
+    color: #fff;
 }
 
 .footer__info strong {
-    color: #fff;
+    color: var(--terracotta);
     display: block;
     margin-bottom: 5px;
     font-weight: 600;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
 }
 
 .footer__contact p {
     color: #bbb;
     margin: 10px 0;
     font-weight: 300;
+    font-size: 1.1rem;
 }
 
 .footer__phone {
     display: inline-block;
     font-size: 1.3rem;
     font-weight: 700;
+    letter-spacing: 1px;
     color: #fff;
     margin-bottom: 10px;
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid transparent;
 }
 
 .footer__phone:hover {
-    color: var(--dark-red);
+    color: var(--terracotta);
+    border-bottom-color: var(--terracotta);
 }
 
 .footer__social {
@@ -282,7 +499,7 @@ ul {
 .footer__social a {
     font-size: 1.5rem;
     color: #bbb;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
     width: 40px;
     height: 40px;
     display: flex;
@@ -290,46 +507,88 @@ ul {
     justify-content: center;
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.footer__social a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--terracotta);
+    transform: scale(0);
+    transition: transform 0.3s ease;
+    border-radius: 50%;
+    z-index: -1;
 }
 
 .footer__social a:hover {
-    color: var(--dark-red);
-    background-color: rgba(139, 0, 0, 0.1);
+    color: var(--white);
+    transform: translateY(-3px);
+}
+
+.footer__social a:hover::before {
+    transform: scale(1);
 }
 
 .footer__bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(200, 90, 63, 0.2);
     padding: 20px 0;
     text-align: center;
     color: #777;
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-weight: 300;
+    position: relative;
 }
 
 .creator-link {
-    color: var(--dark-red);
+    color: var(--terracotta);
     font-weight: 600;
+    position: relative;
+    display: inline-block;
 }
 
-.creator-link:hover {
-    color: var(--light-red);
+.creator-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--terracotta);
+    transition: width 0.3s ease;
+}
+
+.creator-link:hover::after {
+    width: 100%;
 }
 
 /* ===== АДАПТАЦІЯ ===== */
+@media (max-width: 992px) {
+    .section__title {
+        font-size: 2.8rem;
+    }
+}
+
 @media (max-width: 768px) {
     .nav__menu {
         position: fixed;
         top: var(--header-height);
         right: -100%;
         flex-direction: column;
-        background-color: #000;
+        background-color: rgba(0, 0, 0, 0.98);
+        backdrop-filter: blur(10px);
         width: 100%;
         height: calc(100vh - var(--header-height));
         padding: 40px 20px;
-        transition: right 0.4s ease;
+        transition: right 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         gap: 25px;
-        align-items: flex-start;
+        align-items: center;
         z-index: 999;
+        border-left: 1px solid rgba(200, 90, 63, 0.2);
     }
 
     .nav__menu--visible {
@@ -345,6 +604,7 @@ ul {
         margin-top: 10px;
         justify-content: center;
         width: 100%;
+        border-color: rgba(200, 90, 63, 0.3);
     }
 
     .section {
@@ -352,7 +612,7 @@ ul {
     }
 
     .section__title {
-        font-size: 2.2rem;
+        font-size: 2.4rem;
     }
 
     .footer__content {
@@ -363,4 +623,88 @@ ul {
     .footer__social {
         justify-content: center;
     }
+}
+
+@media (max-width: 576px) {
+    .section__title {
+        font-size: 2rem;
+    }
+    
+    .btn {
+        padding: 14px 30px;
+        font-size: 0.85rem;
+    }
+}
+
+/* ===== ПРЕМІАЛЬНІ ДОПОВНЕННЯ ===== */
+/* Декоративні лінії */
+.premium-divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--terracotta), transparent);
+    margin: 30px 0;
+}
+
+/* Блискучі акценти */
+.gold-accent {
+    color: var(--gold);
+    font-weight: 600;
+}
+
+/* Картки з преміальним ефектом */
+.premium-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(200, 90, 63, 0.1);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.premium-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(200, 90, 63, 0.1), transparent);
+    transition: left 0.6s ease;
+}
+
+.premium-card:hover {
+    border-color: var(--terracotta);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(200, 90, 63, 0.2);
+}
+
+.premium-card:hover::before {
+    left: 100%;
+}
+
+/* Анімація для іконок */
+.icon-hover {
+    transition: all 0.3s ease;
+}
+
+.icon-hover:hover {
+    transform: scale(1.2) rotate(5deg);
+    color: var(--terracotta);
+}
+
+/* Стиль для цін */
+.price-tag-premium {
+    font-family: 'Bebas Neue', cursive;
+    color: var(--terracotta);
+    font-size: 1.8rem;
+    position: relative;
+    display: inline-block;
+}
+
+.price-tag-premium::before {
+    content: '€';
+    font-size: 1rem;
+    position: absolute;
+    top: 5px;
+    left: -15px;
+    color: var(--terracotta-light);
 }

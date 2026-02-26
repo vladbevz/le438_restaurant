@@ -5,7 +5,7 @@
 
 .menu-header {
     text-align: center;
-    padding: 40px 0;
+    padding: 0 0 40px 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -24,11 +24,11 @@
 }
 
 .menu-subtitle {
+    font-family: 'Bebas Neue', cursive;
     font-size: 1.5rem;
-    color: var(--dark-red);
+    color: var(--terracotta);
     letter-spacing: 3px;
     text-transform: uppercase;
-    font-weight: 600;
 }
 
 .menu-content {
@@ -72,7 +72,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 30px;
+    margin-bottom: 5px;
 }
 
 .category-title {
@@ -85,7 +85,7 @@
 }
 
 .price-tag {
-    background-color: var(--dark-red);
+    background-color: var(--terracotta);
     color: var(--white);
     padding: 10px 25px;
     font-family: 'Bebas Neue', cursive;
@@ -95,139 +95,167 @@
     text-align: center;
 }
 
-.plat-note {
+/* ===== UNIFIED ITEMS STYLES ===== */
+.items-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 15px 0;
+}
+
+.items-list li {
     color: #bbb;
-    font-size: 1.1rem;
+    margin-bottom: 12px;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    line-height: 1.4;
+}
+
+.item-name {
+    color: var(--white);
+    font-weight: 500;
+    margin-right: 5px;
+}
+
+.item-note {
+    color: #999;
+    font-size: 0.9rem;
     font-style: italic;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 10px 0 0 0;
+    padding: 8px 0 0 0;
+    border-top: 1px dashed rgba(200, 90, 63, 0.2);
+}
+
+/* ===== PASTA GRID ===== */
+.pasta-sauces-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    /* margin-top: 20px; */
+}
+
+.pasta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.pasta-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pasta-list li {
+    color: #bbb;
+    padding: 8px 0;
+    font-size: 1rem;
+    border-bottom: 1px solid rgba(200, 90, 63, 0.1);
+}
+
+.subsection-title {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.3rem;
+    color: var(--terracotta);
+    margin: 0 0 15px 0;
+    letter-spacing: 1px;
 }
 
 .sauces-section {
-    margin-top: 20px;
-}
-
-.sauces-title {
-    font-family: 'Bebas Neue', cursive;
-    font-size: 1.5rem;
-    color: var(--white);
-    margin-bottom: 15px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+    padding-left: 20px;
+    border-left: 1px solid rgba(200, 90, 63, 0.2);
 }
 
 .sauces-list {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .sauces-list li {
     color: #bbb;
     margin-bottom: 10px;
-    padding-left: 20px;
+    padding-left: 15px;
     position: relative;
-    font-size: 1.1rem;
-    letter-spacing: 1px;
+    font-size: 1rem;
 }
 
 .sauces-list li:before {
     content: '•';
     position: absolute;
     left: 0;
-    color: var(--dark-red);
-    font-size: 1.5rem;
+    color: var(--terracotta);
 }
 
-.poke-options {
-    list-style: none;
-    padding: 0;
-}
-
-.poke-options li {
-    color: #bbb;
-    margin-bottom: 15px;
-    font-size: 1.1rem;
-    letter-spacing: 1px;
-    line-height: 1.5;
-}
-
-.option-name {
-    color: var(--white);
-    font-weight: 600;
-    text-transform: uppercase;
-}
-
+/* ===== OPTIONS ===== */
 .menu-options {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
     margin: 60px 0;
-    padding: 40px;
-    background-color: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(200, 90, 63, 0.2);
 }
 
 .option {
     text-align: center;
-    padding: 20px;
+    padding: 15px;
 }
 
 .option-title {
     font-family: 'Bebas Neue', cursive;
-    font-size: 1.8rem;
-    letter-spacing: 2px;
-    margin-bottom: 10px;
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
     color: var(--white);
-    text-transform: uppercase;
 }
 
 .option-note {
-    color: #aaa;
-    font-size: 0.95rem;
-    margin-bottom: 5px;
-    font-weight: 300;
+    color: #999;
+    font-size: 0.85rem;
+    margin-bottom: 3px;
+    font-style: italic;
 }
 
 .option-price {
     font-family: 'Bebas Neue', cursive;
-    font-size: 2.2rem;
-    color: var(--dark-red);
-    letter-spacing: 2px;
-    margin-top: 15px;
+    font-size: 2rem;
+    color: var(--terracotta);
+    letter-spacing: 1px;
+    margin-top: 8px;
 }
 
+/* ===== CTA ===== */
 .menu-cta {
     text-align: center;
-    padding: 60px 0 30px;
+    padding: 40px 0 20px;
 }
 
 .cta-content {
-    background-color: rgba(139, 0, 0, 0.1);
-    border: 1px solid rgba(139, 0, 0, 0.3);
-    padding: 40px;
-    margin-bottom: 40px;
+    background-color: rgba(200, 90, 63, 0.05);
+    border: 1px solid rgba(200, 90, 63, 0.2);
+    padding: 30px;
+    margin-bottom: 30px;
 }
 
 .cta-icon {
-    font-size: 3rem;
-    color: var(--dark-red);
-    margin-bottom: 20px;
+    font-size: 2.5rem;
+    color: var(--terracotta);
+    margin-bottom: 15px;
 }
 
 .cta-title {
-    font-size: 1.5rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 15px;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
     color: var(--white);
-    font-weight: 600;
 }
 
 .cta-phone {
     display: inline-block;
-    font-size: 2.2rem;
-    font-weight: 700;
+    font-size: 2rem;
+    font-weight: 600;
     color: var(--white);
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
@@ -235,7 +263,7 @@
 }
 
 .cta-phone:hover {
-    color: var(--dark-red);
+    color: var(--terracotta);
 }
 
 /* ===== MEDIA QUERIES ===== */
@@ -271,38 +299,59 @@
     }
     
     .category-image {
-        height: 220px;
+        height: 200px;
         max-width: 400px;
         margin: 0 auto;
-    }
-    
-    .menu-options {
-        grid-template-columns: 1fr;
-        padding: 30px 20px;
-        gap: 30px;
     }
     
     .category-header {
         flex-direction: column;
         align-items: flex-start;
-        gap: 15px;
+        gap: 10px;
     }
     
     .price-tag {
         align-self: flex-start;
     }
     
+    .pasta-sauces-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .sauces-section {
+        padding-left: 0;
+        border-left: none;
+        border-top: 1px solid rgba(200, 90, 63, 0.2);
+        padding-top: 20px;
+    }
+    
+    .menu-options {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px;
+    }
+    
     .cta-phone {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
 }
 
 @media (max-width: 576px) {
     .menu-title {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
     
     .category-image {
         height: 180px;
+    }
+    
+    .pasta-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    
+    .items-list li {
+        font-size: 0.95rem;
     }
 }
