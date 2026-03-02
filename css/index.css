@@ -77,13 +77,30 @@
 
 .hero__hours {
     font-family: 'Bebas Neue', cursive;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     color: #fff;
     background: rgba(200, 90, 63, 0.2);
     padding: 6px 15px;
     border: 1px solid rgba(200, 90, 63, 0.5);
     letter-spacing: 1.5px;
     margin-bottom: 5px;
+     line-height: 1.6;
+}
+.hero__logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+
+.hero__logo img {
+    height: 120px;
+    width: auto;
+    filter: brightness(1.1) drop-shadow(0 0 20px rgba(200, 90, 63, 0.4));
+    transition: filter 0.3s ease;
+}
+
+.hero__logo img:hover {
+    filter: brightness(1.2) drop-shadow(0 0 30px rgba(200, 90, 63, 0.6));
 }
 
 @media (max-width: 768px) {
@@ -160,7 +177,7 @@
 }
 
 .service__icon {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     color: #fff;
     margin-bottom: 20px;
     transition: color 0.3s ease;
@@ -187,7 +204,7 @@
 .service__card p {
     color: #aaa;
     font-weight: 300;
-    font-size: 1.1rem;
+    font-size: 1.25rem;
 }
 
 /* ===== MENU PREVIEW ===== */

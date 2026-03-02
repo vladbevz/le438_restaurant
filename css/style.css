@@ -1,4 +1,13 @@
 /* ===== RESET & BASE ===== */
+@font-face {
+    font-family: 'Lumios Marker';
+    src: url('../fonts/Lumios-Marker.woff2') format('woff2'),
+         url('../fonts/Lumios-Marker.woff') format('woff'),
+         url('../fonts/Lumios-Marker.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: optional;
+}
 * {
     margin: 0;
     padding: 0;
