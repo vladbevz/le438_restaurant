@@ -1,409 +1,180 @@
 /* ===== CONTACT PAGE ===== */
-.contact-page {
-    padding-top: calc(var(--header-height) + 40px);
-    background-color: #000000;
-}
+.contact-page { padding-top: var(--header-height); background: var(--bg); }
 
-/* ===== HEADER ===== */
-.contact-header {
+/* ===== HEAD ===== */
+.contact-head {
+    background: var(--bg-warm);
+    padding: 64px 0 52px;
+    border-bottom: 1px solid var(--border);
     text-align: center;
-    padding: 40px 0 30px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    margin-bottom: 40px;
 }
-
-.contact-title {
+.contact-head__title {
     font-family: 'Bebas Neue', cursive;
-    font-size: 3.5rem;
-    letter-spacing: 3px;
-    color: #ffffff;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-    font-weight: 250; 
+    font-size: clamp(3.5rem, 9vw, 6.5rem);
+    letter-spacing: 10px; color: var(--ink);
+    line-height: 1; margin-bottom: -20px;
+}
+.contact-head__sub {
+    font-family: 'Lumios Marker', cursive;
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    color: var(--terracotta); line-height: 1;
 }
 
-.contact-subtitle {
-    font-family: 'Bebas Neue', cursive;
-    font-size: 1.2rem;
-    color: #aaa;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    /* Видалено font-weight: 300; */
-}
-
-/* ===== GRID ===== */
+/* ===== INFO GRID ===== */
 .contact-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    margin-bottom: 50px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin: 52px 0 0;
 }
 
-/* ===== CARD ===== */
 .contact-card {
-    background-color: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 20px;
-    transition: all 0.3s ease;
+    background: var(--bg-warm);
+    padding: 36px 28px;
+    transition: background .3s ease;
+    display: flex; flex-direction: column; gap: 0;
+}
+.contact-card:hover { background: var(--bg); }
+.contact-card--wide { grid-column: span 2; }
+
+.contact-card__icon {
+    font-size: 1.6rem; color: var(--terracotta);
+    margin-bottom: 14px;
+}
+.contact-card__title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.1rem; font-weight: 700;
+    color: var(--ink); margin-bottom: 20px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--border);
+}
+.contact-card__note {
+    font-family: 'Montserrat', sans-serif;
+    font-size: .82rem; color: var(--ink-muted);
+    font-style: italic; margin-top: auto; padding-top: 14px;
+    line-height: 1.65;
 }
 
-.contact-card:hover {
-    border-color: var(--terracotta);
-    transform: translateY(-5px);
-    background-color: rgba(189, 63, 39, 0.03);
+/* Hours */
+.hours-row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 9px 0;
+    border-bottom: 1px solid var(--border-warm);
+    font-family: 'Montserrat', sans-serif;
+    font-size: .88rem;
 }
-
-.contact-icon {
-    font-size: 2.4rem;
-    color: #ffffff;
-    margin-bottom: 8px;
-    text-align: center;
-    transition: color 0.3s ease;
-}
-
-.contact-card:hover .contact-icon {
+.hours-row:last-of-type { border-bottom: none; }
+.hours-day { color: var(--ink-mid); font-weight: 400; }
+.hours-time {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.05rem; letter-spacing: 1px;
     color: var(--terracotta);
 }
+.hours-row--closed .hours-time {
+    font-family: 'Montserrat', sans-serif;
+    font-size: .82rem; color: var(--ink-muted);
+    font-style: italic; letter-spacing: 0;
+}
 
-.contact-card-title {
+/* Address */
+.address-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: .95rem; color: var(--ink-mid);
+    font-weight: 300; line-height: 1.8;
+    margin-bottom: 20px; flex: 1;
+}
+
+/* Phone */
+.contact-phone {
     font-family: 'Bebas Neue', cursive;
-    font-size: 1.8rem;
-    color: #ffffff;
-    margin-bottom: 10px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    /* Видалено font-weight: 400; */
-    text-align: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding-bottom: 12px;
+    font-size: 2rem; letter-spacing: 2px;
+    color: var(--ink); display: block;
+    margin-bottom: 0;
+    transition: color .3s ease;
 }
+.contact-phone:hover { color: var(--terracotta); }
 
-.contact-card:hover .contact-card-title {
-    border-bottom-color: rgba(189, 63, 39, 0.3);
+/* Services chips */
+.services-chips {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    margin-top: 4px;
 }
-
-.contact-info {
-    color: #bbb;
-    font-size: 1.2rem;
+.services-chips span {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: .82rem; font-weight: 400; color: var(--ink-mid);
+    padding: 8px 14px;
+    border: 1px solid var(--border);
+    background: var(--bg); transition: border-color .25s ease, color .25s ease;
 }
+.services-chips span:hover { border-color: var(--terracotta); color: var(--ink); }
+.services-chips span i { color: var(--terracotta); font-size: .78rem; }
 
-/* ===== HORAIRES ===== */
-.hours-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 8px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+/* Social buttons */
+.social-btns {
+    display: flex; flex-direction: column; gap: 10px;
+    margin-top: 4px;
 }
+.social-btns .btn { justify-content: center; }
 
-.hours-item:last-of-type {
-    border-bottom: none;
-    padding-bottom: 0;
+/* ===== MAP ===== */
+.contact-map {
+    border: 1px solid var(--border);
+    border-top: none;
+    overflow: hidden;
 }
-
-.hours-item.closed .time {
-    color: #666;
+.contact-map iframe { display: block; }
+.map-footer {
+    padding: 16px 20px;
+    background: var(--bg-warm);
+    border-top: 1px solid var(--border);
+    display: flex; justify-content: space-between;
+    align-items: center; gap: 16px;
+    flex-wrap: wrap;
 }
-
-.day {
-    font-family: 'Bebas Neue', cursive;
-    color: #ffffff;
-    font-size: 1.2rem;
-    letter-spacing: 0.5px;
-    /* Видалено font-weight: 500; */
-}
-
-.time {
-    font-family: 'Bebas Neue', cursive;
-    color: #ffffff;
-    font-size: 1.2rem;
-    /* Видалено font-weight: 500; */
-}
-
-.note {
-    margin-top: 15px;
-    font-size: 1.2rem;
-    color: #777;
-    font-style: italic;
-    padding-top: 10px;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-/* ===== ADRESSE ===== */
-.address {
-    align-items: center;
-    text-align: center;
-    font-size: 1.2rem;
-    line-height: 1.6;
-    margin-bottom: 15px;
-    color: #bbb;
-}
-
-.address strong {
-    font-family: 'Bebas Neue', cursive;
-    color: #ffffff;
-    font-size: 1.4rem;
-    display: block;
-    margin-bottom: 8px;
-    
-    /* Видалено font-weight: 600; */
-}
-
-/* ===== CONTACT ===== */
-.phone-item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 20px;
-    padding: 10px;
-    border: 1px solid rgba(189, 63, 39, 0.2);
-    transition: all 0.3s ease;
-}
-
-.phone-item:hover {
-    border-color: var(--terracotta);
-    background-color: rgba(189, 63, 39, 0.05);
-}
-
-.phone-item i {
-    font-size: 1.1rem;
-    color: var(--terracotta);
-}
-
-.phone-link {
-    font-family: 'Bebas Neue', cursive;
-    font-size: 1.5rem;
-    color: #ffffff;
-    text-decoration: none;
-    letter-spacing: 0.5px;
-    transition: color 0.3s ease;
-    /* Видалено font-weight: 600; */
-}
-
-.phone-link:hover {
-    color: var(--terracotta);
-}
-
-.contact-note {
-    font-size: 1.2rem;
-    line-height: 1.5;
-    color: #999;
-}
-
-/* ===== SERVICES ===== */
-.services-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.services-list li {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 8px;
-    color: #bbb;
-    font-size: 1.2rem;
-    transition: color 0.3s ease;
-}
-
-.services-list li:hover {
-    color: #ffffff;
-}
-
-.services-list i {
-    width: 18px;
-    text-align: center;
-    font-size: 0.9rem;
-}
-
-.services-list .fa-check {
-    color: var(--terracotta);
-}
-
-.services-list .fa-hourglass-half {
-    color: #666;
-}
-
-/* ===== CTA ===== */
-.contact-cta {
-    background-color: transparent;
-    border: 1px solid rgba(189, 63, 39, 0.2);
-    padding: 40px 35px;
-    text-align: center;
-    margin: 40px 0 20px;
-    transition: all 0.3s ease;
-}
-
-.contact-cta:hover {
-    border-color: var(--terracotta);
-    background-color: rgba(189, 63, 39, 0.02);
-}
-
-.cta-content h2 {
-    font-family: 'Bebas Neue', cursive;
-    font-size: 2.2rem;
-    color: #ffffff;
-    margin-bottom: 15px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    /* Видалено font-weight: 400; */
-    transition: color 0.3s ease;
-}
-
-.contact-cta:hover .cta-content h2 {
-    color: var(--terracotta);
-}
-
-.cta-content p {
-    color: #aaa;
-    font-size: 1rem;
-    margin-bottom: 25px;
+.map-footer p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: .85rem; color: var(--ink-mid);
     font-weight: 300;
 }
+.map-footer p i { color: var(--terracotta); margin-right: 6px; }
+.btn--sm { padding: 9px 20px; font-size: .72rem; }
 
-/* ===== BACK HOME ===== */
-.back-home {
+/* ===== CTA BAND ===== */
+.contact-cta {
+    background: var(--bg-warm);
+    padding: 80px 0;
     text-align: center;
-    padding: 30px 0 50px;
+    border-top: 1px solid var(--border);
+    margin-top: 64px;
 }
-
-.back-home .btn {
-    border-color: rgba(255, 255, 255, 0.2);
-    padding: 15px 35px;
-    font-size: 0.9rem;
+.contact-cta__inner { max-width: 480px; margin: 0 auto; }
+.contact-cta__icon { font-size: 1.8rem; color: var(--terracotta); margin-bottom: 12px; }
+.contact-cta__label {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.4rem; font-style: italic;
+    color: var(--ink-muted); margin-bottom: 8px;
 }
-
-.back-home .btn:hover {
-    border-color: var(--terracotta);
-}
-
-/* ===== BUTTONS ===== */
-.btn--map {
-    background-color: transparent;
-    border: 1px solid rgba(189, 63, 39, 0.3);
-    color: #ffffff;
-    padding: 10px 20px;
+.contact-cta__phone {
     font-family: 'Bebas Neue', cursive;
-    font-size: 1rem;
-    width: 100%;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
-    text-align: center;
+    font-size: 3rem; letter-spacing: 2px;
+    color: var(--ink); display: block;
+    margin-bottom: 28px;
+    transition: color .3s ease;
 }
-
-.btn--map:hover {
-    background-color: var(--terracotta);
-    border-color: var(--terracotta);
-    transform: translateY(-2px);
-}
-
-.btn--call {
-    background-color: var(--terracotta);
-    border: 1px solid var(--terracotta);
-    color: #ffffff;
-    padding: 12px 35px;
-    font-family: 'Bebas Neue', cursive;
-    font-size: 1.2rem;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
-}
-
-.btn--call:hover {
-    background-color: var(--terracotta-dark);
-    border-color: var(--terracotta-dark);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(189, 63, 39, 0.2);
-}
+.contact-cta__phone:hover { color: var(--terracotta); }
 
 /* ===== RESPONSIVE ===== */
-@media (max-width: 992px) {
-    .contact-title {
-        font-size: 3rem;
-    }
-    
-    .contact-grid {
-        gap: 20px;
-    }
-    
-    .contact-card {
-        padding: 22px 18px;
-    }
-    
-    .contact-card-title {
-        font-size: 1.5rem;
-    }
+@media (max-width: 900px) {
+    .contact-grid { grid-template-columns: repeat(2, 1fr); }
+    .contact-card--wide { grid-column: span 2; }
 }
-
-@media (max-width: 768px) {
-    .contact-header {
-        padding: 30px 0 20px;
-        margin-bottom: 30px;
-    }
-    
-    .contact-title {
-        font-size: 2.5rem;
-    }
-    
-    .contact-subtitle {
-        font-size: 1rem;
-    }
-    
-    .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-    
-    .contact-card {
-        padding: 25px 20px;
-    }
-    
-    .contact-card-title {
-        font-size: 1.5rem;
-    }
-    
-    .contact-cta {
-        padding: 35px 25px;
-    }
-    
-    .cta-content h2 {
-        font-size: 2rem;
-    }
-}
-
-@media (max-width: 576px) {
-    .contact-title {
-        font-size: 2.2rem;
-    }
-    
-    .contact-subtitle {
-        font-size: 0.9rem;
-    }
-    
-    .contact-card {
-        padding: 20px 15px;
-    }
-    
-    .contact-card-title {
-        font-size: 1.4rem;
-    }
-    
-    .phone-item {
-        flex-direction: row;
-        padding: 10px;
-    }
-    
-    .phone-link {
-        font-size: 1.2rem;
-    }
-    
-    .cta-content h2 {
-        font-size: 1.8rem;
-    }
-    
-    .contact-cta {
-        padding: 30px 20px;
-    }
+@media (max-width: 600px) {
+    .contact-grid { grid-template-columns: 1fr; }
+    .contact-card--wide { grid-column: span 1; }
+    .contact-head__title { margin-bottom: -14px; }
+    .contact-cta__phone { font-size: 2.4rem; }
+    .map-footer { flex-direction: column; align-items: flex-start; }
 }

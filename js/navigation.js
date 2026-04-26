@@ -1,60 +1,54 @@
-// Mobile menu functionality
 (function () {
-  "use strict";
+    'use strict';
 
-  document.addEventListener("DOMContentLoaded", function () {
-    const toggleButton = document.querySelector(".nav__toggle");
-    const navMenu = document.querySelector(".nav__menu");
+    document.addEventListener('DOMContentLoaded', function () {
+        var header  = document.querySelector('.header');
+        var toggle  = document.querySelector('.nav__toggle');
+        var drawer  = document.getElementById('navDrawer');
 
-    if (!toggleButton || !navMenu) return;
+        if (!header) return;
 
-    // Toggle menu on button click
-    toggleButton.addEventListener("click", function (e) {
-      e.stopPropagation();
-      navMenu.classList.toggle("nav__menu--visible");
+        /* ── Scroll ── */
+        if (document.querySelector('.hero')) {
+            function onScroll() {
+                header.classList.toggle('scrolled', window.scrollY > 40);
+            }
+            window.addEventListener('scroll', onScroll, { passive: true });
+            onScroll();
+        }
 
-      // Toggle icon between bars and times
-      const icon = this.querySelector("i");
-      if (icon.classList.contains("fa-bars")) {
-        icon.classList.remove("fa-bars");
-        icon.classList.add("fa-times");
-      } else {
-        icon.classList.remove("fa-times");
-        icon.classList.add("fa-bars");
-      }
+        if (!toggle || !drawer) return;
+
+        /* ── Drawer toggle ── */
+        function openDrawer() {
+            drawer.classList.add('is-open');
+            document.body.style.overflow = 'hidden';
+            toggle.querySelector('i').className = 'fas fa-times';
+        }
+        function closeDrawer() {
+            drawer.classList.remove('is-open');
+            document.body.style.overflow = '';
+            toggle.querySelector('i').className = 'fas fa-bars';
+        }
+        function isOpen() { return drawer.classList.contains('is-open'); }
+
+        toggle.addEventListener('click', function (e) {
+            e.stopPropagation();
+            isOpen() ? closeDrawer() : openDrawer();
+        });
+
+        drawer.querySelectorAll('a').forEach(function (a) {
+            a.addEventListener('click', closeDrawer);
+        });
+
+        document.addEventListener('click', function (e) {
+            if (isOpen() && !drawer.contains(e.target) && !toggle.contains(e.target)) {
+                closeDrawer();
+            }
+        });
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && isOpen()) closeDrawer();
+        });
     });
-
-    // Close menu when clicking on a link
-    navMenu.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        navMenu.classList.remove("nav__menu--visible");
-        const icon = toggleButton.querySelector("i");
-        icon.classList.remove("fa-times");
-        icon.classList.add("fa-bars");
-      });
-    });
-
-    // Close menu when clicking outside
-    document.addEventListener("click", function (e) {
-      if (!navMenu.contains(e.target) && !toggleButton.contains(e.target)) {
-        navMenu.classList.remove("nav__menu--visible");
-        const icon = toggleButton.querySelector("i");
-        icon.classList.remove("fa-times");
-        icon.classList.add("fa-bars");
-      }
-    });
-
-    // Close menu on escape key
-    document.addEventListener("keydown", function (e) {
-      if (
-        e.key === "Escape" &&
-        navMenu.classList.contains("nav__menu--visible")
-      ) {
-        navMenu.classList.remove("nav__menu--visible");
-        const icon = toggleButton.querySelector("i");
-        icon.classList.remove("fa-times");
-        icon.classList.add("fa-bars");
-      }
-    });
-  });
-})();
+}());

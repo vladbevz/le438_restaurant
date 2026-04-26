@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(du -sh /e/Dev/le438_restaurant/images/*)",
+      "Bash(grep -r \"lazy\" /e/Dev/le438_restaurant/*.html)",
+      "Bash(grep -E \"meta name|meta property|og:\" /e/Dev/le438_restaurant/*.html)",
+      "Bash(grep -i \"description\\\\|keywords\\\\|canonical\" /e/Dev/le438_restaurant/*.html)",
+      "Bash(xargs ls:*)",
+      "Bash(git -C /e/Dev/le438_restaurant log --oneline)"
+    ]
+  }
+}
