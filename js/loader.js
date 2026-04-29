@@ -11,7 +11,7 @@
     }
     sessionStorage.setItem('le438_loaded', '1');
 
-    var MIN_DISPLAY = 1600; // ms — loader visible at minimum this long
+    var MIN_DISPLAY = 1800; // ms — loader visible at minimum this long
     var start = Date.now();
 
     function dismiss() {

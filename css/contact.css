@@ -4,20 +4,26 @@
 /* ===== HEAD ===== */
 .contact-head {
     background: beige;
-    padding: 28px 0 28px;
-    /* border-bottom: 1px solid var(--border); */
+    padding: 36px 0 28px;
     text-align: center;
+    border-bottom: 1px solid var(--border);
+}
+.contact-head__eyebrow {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.62rem; letter-spacing: 6px;
+    text-transform: uppercase; color: var(--terracotta);
+    margin-bottom: 16px;
 }
 .contact-head__title {
     font-family: 'Bebas Neue', cursive;
-    font-size: clamp(3rem, 5vw, 6.5rem);
-    letter-spacing: 8px; color: var(--ink);
-    line-height: 1; margin-bottom: -30px;
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    letter-spacing: 10px; color: var(--ink);
+    line-height: 1;
 }
-.contact-head__sub {
-    font-family: 'Lumios Marker', cursive;
-    font-size: clamp(2.2rem, 5vw, 3.4rem);
-    color: var(--terracotta); line-height: 1;
+.contact-head__line {
+    width: 60px; height: 2px;
+    background: var(--terracotta);
+    margin: 16px auto 0;
 }
 
 /* ===== SECTION 1 — APPELER ===== */
