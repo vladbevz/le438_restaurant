@@ -3,16 +3,16 @@
 
 /* ===== HEAD ===== */
 .menu-head {
-    background: var(--bg-warm);
-    padding: 64px 0 52px;
+    background: beige;
+    padding: 18px 0;
     border-bottom: 1px solid var(--border);
     text-align: center;
 }
 .menu-head__title {
     font-family: 'Bebas Neue', cursive;
-    font-size: clamp(3.5rem, 9vw, 6.5rem);
-    letter-spacing: 10px; color: var(--ink);
-    line-height: 1; margin-bottom: -20px;
+    font-size: clamp(3rem, 5vw, 6.5rem);
+    letter-spacing: 8px; color: var(--ink);
+    line-height: 1;
 }
 .menu-head__sub {
     font-family: 'Lumios Marker', cursive;
@@ -41,7 +41,7 @@
     color: var(--terracotta); padding-top: 4px;
 }
 .menu-cat__title {
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: 'Bebas Neue', cursive;
     font-size: clamp(1.6rem, 3.5vw, 2.2rem);
     font-weight: 700; color: var(--ink); line-height: 1.1;
 }
@@ -126,7 +126,7 @@
     color: var(--terracotta); font-size: .8rem;
 }
 .item-name {
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: 'Bebas Neue', cursive;
     color: var(--ink); font-size: 1rem;
     font-weight: 600; margin-right: 6px;
 }
@@ -143,8 +143,8 @@
     display: grid; grid-template-columns: 1fr 1fr; gap: 28px;
 }
 .subsection-title {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: .95rem; font-style: italic;
+    font-family: 'Bebas Neue', cursive;
+    font-size: .95rem;
     color: var(--terracotta); margin: 0 0 12px;
 }
 .pasta-list { list-style: none; padding: 0; margin: 0; }
@@ -185,7 +185,7 @@
 
 /* ===== OPTIONS ===== */
 .menu-options-section {
-    background: var(--bg-warm);
+    background: beige;
     padding: 64px 0;
     border-top: 1px solid var(--border);
 }
@@ -202,7 +202,7 @@
 }
 .option-item:hover { background: var(--bg); }
 .option-title {
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: 'Bebas Neue', cursive;
     font-size: 1.1rem; font-weight: 600;
     color: var(--ink); margin-bottom: 6px;
 }
@@ -230,8 +230,8 @@
 }
 .menu-cta__icon { font-size: 1.8rem; color: var(--terracotta); margin-bottom: 12px; }
 .menu-cta__label {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 1.4rem; font-style: italic;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.4rem;
     color: var(--ink-muted); margin-bottom: 8px;
 }
 .menu-cta__phone {

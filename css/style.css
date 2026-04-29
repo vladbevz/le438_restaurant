@@ -44,7 +44,7 @@ p { font-family: 'Montserrat', sans-serif; }
 /* ===== LAYOUT ===== */
 .container { width:100%; max-width:1200px; margin:0 auto; padding:0 24px; }
 .section    { padding: 96px 0; }
-.section--warm { background: var(--bg-warm); }
+.section--warm { background: linear-gradient(150deg, #ede3d0 0%, #f4ede3 55%, #ede5d5 100%); }
 .text-center { text-align: center; }
 
 /* ===== EYEBROW ===== */
@@ -59,12 +59,12 @@ p { font-family: 'Montserrat', sans-serif; }
 
 /* ===== SECTION TITLE ===== */
 .section-title {
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: 'Bebas Neue', cursive;
     font-size: clamp(2rem, 4vw, 2.8rem);
     font-weight: 700; color: var(--ink);
     line-height: 1.15; margin-bottom: 3.5rem;
 }
-.section-title em { font-style: italic; color: var(--terracotta); }
+.section-title em { font-style: normal; color: var(--terracotta); }
 .section-title--center { text-align: center; }
 .section-title--center .eyebrow { justify-content: center; }
 
@@ -147,7 +147,7 @@ p { font-family: 'Montserrat', sans-serif; }
     position:relative;
 }
 .nav__logo { display:flex; align-items:center; justify-content:center; }
-.nav__logo img { height:86px; width:auto; transition:transform .3s ease; }
+.nav__logo img { height:144px; width:auto; margin:-58px 0; transition:transform .3s ease; }
 .nav__logo:hover img { transform:scale(1.04); }
 .nav__logo .logo-dark  { display:none; }
 .nav__logo .logo-light { display:block; }
@@ -218,7 +218,7 @@ p { font-family: 'Montserrat', sans-serif; }
 }
 .nav__drawer.is-open { opacity:1; visibility:visible; }
 .nav__drawer a {
-    font-family:'Playfair Display', Georgia, serif;
+    font-family:'Bebas Neue', cursive;
     font-size:2.4rem; font-style:italic;
     color:var(--ink); transition:color .3s ease;
 }
@@ -259,26 +259,22 @@ p { font-family: 'Montserrat', sans-serif; }
 
 /* ===== FOOTER ===== */
 .footer {
-    background:var(--bg-warm);
+    background: beige;
     border-top:3px solid var(--terracotta);
-    padding-top:64px;
+    padding-top:32px;
 }
 .footer__grid {
     display:grid;
     grid-template-columns:1.4fr 1fr 1fr;
-    gap:48px;
-    padding-bottom:48px;
+    gap:32px;
+    padding-bottom:32px;
     border-bottom:1px solid var(--border);
 }
-.footer__brand-name {
-    font-family:'Bebas Neue', cursive;
-    font-size:2.8rem; letter-spacing:8px;
-    color:var(--ink); line-height:1; margin:0 0 -12px;
+.footer__logo {
+    height:144px; width:auto; display:block;
+    transition:transform .3s ease;
 }
-.footer__brand-tag {
-    font-family:'Lumios Marker', cursive;
-    font-size:1.5rem; color:var(--terracotta); line-height:1;
-}
+.footer__logo:hover { transform:scale(1.04); }
 
 .footer__heading {
     font-family:'Bebas Neue', cursive;

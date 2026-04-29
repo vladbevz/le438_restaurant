@@ -53,69 +53,72 @@
 
     <main class="contact-page">
 
+        <!-- PAGE HEAD -->
         <div class="contact-head">
             <div class="container">
                 <h1 class="contact-head__title">CONTACT</h1>
-                <p class="contact-head__sub">Nous trouver</p>
             </div>
         </div>
 
-        <div class="container">
-
-            <!-- INFO GRID -->
-            <div class="contact-grid">
-
-                <!-- Horaires -->
-                <div class="contact-card reveal">
-                    <div class="contact-card__icon"><i class="far fa-clock"></i></div>
-                    <h2 class="contact-card__title">Horaires</h2>
-                    <div class="hours-row">
-                        <span class="hours-day">Lundi – Vendredi</span>
-                        <span class="hours-time">11h – 15h</span>
-                    </div>
-                    <div class="hours-row hours-row--closed">
-                        <span class="hours-day">Samedi – Dimanche</span>
-                        <span class="hours-time">Fermé</span>
-                    </div>
-                    <p class="contact-card__note">Fermé les jours fériés</p>
-                </div>
-
-                <!-- Adresse -->
-                <div class="contact-card reveal">
-                    <div class="contact-card__icon"><i class="fas fa-map-marker-alt"></i></div>
-                    <h2 class="contact-card__title">Adresse</h2>
-                    <p class="address-text">438 Chemin d'Aubord<br>30600 Vauvert</p>
-                    <a href="https://maps.google.com/?q=438+Chem.+d%27Aubord+30600+Vauvert"
-                       target="_blank" rel="noopener" class="btn btn--ghost">
-                        <i class="fas fa-directions"></i> Itinéraire
-                    </a>
-                </div>
-
-                <!-- Téléphone -->
-                <div class="contact-card reveal">
-                    <div class="contact-card__icon"><i class="fas fa-phone-alt"></i></div>
-                    <h2 class="contact-card__title">Téléphone</h2>
-                    <a href="tel:+33698327523" class="contact-phone">06 98 32 75 23</a>
-                    <p class="contact-card__note">Réservations, commandes à emporter,<br>devis traiteur entreprise.</p>
-                </div>
-
-                <!-- Services — span 2 cols -->
-                <div class="contact-card contact-card--wide reveal">
-                    <div class="contact-card__icon"><i class="fas fa-concierge-bell"></i></div>
-                    <h2 class="contact-card__title">Nos Services</h2>
-                    <div class="services-chips">
-                        <span><i class="fas fa-utensils"></i> Sur place</span>
-                        <span><i class="fas fa-sun"></i> Terrasse</span>
-                        <span><i class="fas fa-shopping-bag"></i> À emporter</span>
-                        <span><i class="fas fa-briefcase"></i> Traiteur entreprise</span>
+        <!-- SECTION 1 — APPELER -->
+        <section class="contact-call">
+            <div class="container">
+                <div class="contact-call__inner reveal">
+                    <div class="eyebrow" style="justify-content:center">Réservations & commandes</div>
+                    <a href="tel:+33698327523" class="contact-call__phone">06 98 32 75 23</a>
+                    <p class="contact-call__sub">Pour réserver, commander à emporter ou demander un devis traiteur</p>
+                    <div class="contact-call__hours">
+                        <div class="hours-entry">
+                            <span class="hours-entry__label">Lundi – Vendredi</span>
+                            <span class="hours-entry__value">11h – 15h</span>
+                        </div>
+                        <div class="hours-entry hours-entry--closed">
+                            <span class="hours-entry__label">Samedi – Dimanche</span>
+                            <span class="hours-entry__value">Fermé</span>
+                        </div>
+                        <p class="hours-note">Fermé les jours fériés</p>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <!-- Réseaux sociaux -->
-                <div class="contact-card reveal">
-                    <div class="contact-card__icon"><i class="fas fa-share-alt"></i></div>
-                    <h2 class="contact-card__title">Réseaux sociaux</h2>
-                    <div class="social-btns">
+        <!-- SECTION 2 — TROUVER -->
+        <section class="contact-find">
+            <div class="container">
+                <div class="contact-find__inner">
+                    <div class="contact-find__map reveal">
+                        <iframe
+                            title="Localisation LE 438 Vauvert"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2887.3!2d4.276!3d43.6959!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b18583f6262992%3A0x4046df8e1d8c0!2s438%20Chem.%20d%27Aubord%2C%2030600%20Vauvert!5e0!3m2!1sfr!2sfr!4v1700000000000!5m2!1sfr!2sfr"
+                            width="100%" height="420" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                    <div class="contact-find__info reveal reveal--delay-1">
+                        <div class="eyebrow">Notre adresse</div>
+                        <h2 class="contact-find__address">
+                            438 Chemin d'Aubord <em>30600 Vauvert</em>
+                        </h2>
+                        <a href="https://maps.google.com/?q=438+Chem.+d%27Aubord+30600+Vauvert"
+                           target="_blank" rel="noopener" class="btn btn--ghost">
+                            <i class="fas fa-directions"></i> Itinéraire
+                        </a>
+                        <p class="contact-find__services">
+                            Sur place &nbsp;·&nbsp; Terrasse &nbsp;·&nbsp; À emporter &nbsp;·&nbsp; Traiteur entreprise
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3 — SUIVRE -->
+        <section class="contact-social">
+            <div class="container">
+                <div class="contact-social__inner reveal">
+                    <div class="eyebrow" style="justify-content:center">Suivez-nous</div>
+                    <h2 class="contact-social__title">Plat du jour & <em>actualités</em></h2>
+                    <p class="contact-social__text">Publiés chaque matin dès l'ouverture sur nos réseaux sociaux.</p>
+                    <div class="contact-social__btns">
                         <a href="https://www.instagram.com/le_438_vauvert/" target="_blank" rel="noopener" class="btn">
                             <i class="fab fa-instagram"></i> Instagram
                         </a>
@@ -124,31 +127,15 @@
                         </a>
                     </div>
                 </div>
-
-            </div><!-- /.contact-grid -->
-
-
-        </div><!-- /.container -->
-
-        <!-- CTA BAND -->
-        <div class="contact-cta">
-            <div class="container">
-                <div class="contact-cta__inner reveal">
-                    <div class="contact-cta__icon"><i class="fas fa-phone-alt"></i></div>
-                    <p class="contact-cta__label">Réservations & commandes</p>
-                    <a href="tel:+33698327523" class="contact-cta__phone">06 98 32 75 23</a>
-                    <a href="index.html" class="btn btn--ghost"><i class="fas fa-arrow-left"></i> Retour à l'accueil</a>
-                </div>
             </div>
-        </div>
+        </section>
 
     </main>
 
     <footer class="footer">
         <div class="container footer__grid">
             <div>
-                <p class="footer__brand-name">LE 438</p>
-                <p class="footer__brand-tag">Simplement bon</p>
+                <img src="images/logo-le438-black.PNG" alt="LE 438" class="footer__logo">
             </div>
             <div>
                 <p class="footer__heading">Horaires & Adresse</p>
