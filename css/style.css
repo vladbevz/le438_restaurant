@@ -277,7 +277,8 @@ p { font-family: 'Montserrat', sans-serif; }
     border-bottom:1px solid var(--border);
 }
 .footer__logo {
-    height:144px; width:auto; display:block;
+    height:280px; width:auto; display:block;
+    margin:-60px 0;
     transition:transform .3s ease;
 }
 .footer__logo:hover { transform:scale(1.04); }
@@ -340,9 +341,10 @@ p { font-family: 'Montserrat', sans-serif; }
     .nav__logo .logo-dark  { display:block!important; }
     .nav__toggle { display:block; justify-self:end; }
     .section { padding:60px 0; }
-    .footer__grid { grid-template-columns:1fr; gap:32px; }
-    .footer__social { justify-content:flex-start; }
-    .footer__logo { height:60px; }
+    .footer__grid { grid-template-columns:1fr; gap:32px; text-align:center; }
+    .footer__social { justify-content:center; }
+    .footer__logo { height:160px; margin:-30px auto; display:block; }
+    .eyebrow { justify-content:center; }
 }
 @media (max-width:576px) {
     .btn { padding:12px 24px; font-size:.75rem; }

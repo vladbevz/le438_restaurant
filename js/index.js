@@ -1,92 +1,112 @@
-// ===== GOOGLE MAPS =====
-// Конфігурація
-const CONFIG = {
-  API_KEY: "AIzaSyBSoSw7RAlDDZaIddEzK53bS-xe44M8W1o",
-  PLACE_ID: "ChIJKZImdsWDthIRW4IlXp8-TkA",
-  BUSINESS_LOCATION: { lat: 43.6959, lng: 4.276 },
-  BUSINESS_NAME: "LE 438",
-  BUSINESS_ADDRESS: "Zone Industrielle, 30600 Vauvert",
-};
+(function () {
+    'use strict';
 
-// Ініціалізація карти
-function initMap() {
-  const mapElement = document.getElementById("map-with-reviews");
-  if (!mapElement) return;
+    /* ===== LEAFLET MAP ===== */
+    function initMap() {
+        var mapEl = document.getElementById('map-le438');
+        if (!mapEl || typeof L === 'undefined') return;
 
-  try {
-    const map = new google.maps.Map(mapElement, {
-      center: CONFIG.BUSINESS_LOCATION,
-      zoom: 16,
-      styles: [
-        {
-          featureType: "all",
-          elementType: "geometry",
-          stylers: [{ color: "#1a1a1a" }],
-        },
-        {
-          featureType: "all",
-          elementType: "labels.text.fill",
-          stylers: [{ color: "#ffffff" }],
-        },
-      ],
-    });
+        var lat = 43.70606950353588, lng = 4.283461733731595;
 
-    const marker = new google.maps.Marker({
-      position: CONFIG.BUSINESS_LOCATION,
-      map: map,
-      title: CONFIG.BUSINESS_NAME,
-      animation: google.maps.Animation.DROP,
-      icon: {
-        path: google.maps.SymbolPath.CIRCLE,
-        scale: 10,
-        fillColor: "#8B0000",
-        fillOpacity: 1,
-        strokeColor: "#ffffff",
-        strokeWeight: 2,
-      },
-    });
+        var map = L.map('map-le438', {
+            center: [lat, lng],
+            zoom: 16,
+            scrollWheelZoom: false,
+            zoomControl: false
+        });
 
-    const infowindow = new google.maps.InfoWindow({
-      content: `
-                <div style="padding: 15px; max-width: 250px;">
-                    <h3 style="color: #8B0000; margin: 0 0 10px 0;">${CONFIG.BUSINESS_NAME}</h3>
-                    <p style="margin: 0 0 10px 0; color: #333;">${CONFIG.BUSINESS_ADDRESS}</p>
-                    <div style="color: #FFB400; font-size: 1.1rem; margin: 10px 0;">★★★★★</div>
-                    <a href="https://maps.google.com/?q=${encodeURIComponent(CONFIG.BUSINESS_ADDRESS)}" 
-                       target="_blank" 
-                       style="display: inline-block; background: #4285F4; color: white; padding: 8px 15px; 
-                              text-decoration: none; border-radius: 4px; font-weight: bold;">
-                        Ouvrir dans Google Maps →
-                    </a>
-                </div>
-            `,
-    });
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
+            maxZoom: 20
+        }).addTo(map);
 
-    marker.addListener("click", () => {
-      infowindow.open(map, marker);
-    });
+        L.control.zoom({ position: 'bottomright' }).addTo(map);
 
-    setTimeout(() => {
-      infowindow.open(map, marker);
-    }, 1000);
-  } catch (error) {
-    console.error("Map error:", error);
-    const mapContainer = document.getElementById("map-with-reviews");
-    if (mapContainer) {
-      mapContainer.innerHTML = `
-                <div class="fallback-map">
-                    <h4>${CONFIG.BUSINESS_NAME}</h4>
-                    <p><i class="fas fa-map-marker-alt"></i> ${CONFIG.BUSINESS_ADDRESS}</p>
-                    <a href="https://maps.google.com/?q=${encodeURIComponent(CONFIG.BUSINESS_ADDRESS)}" 
-                       target="_blank" 
-                       class="btn-map-link">
-                        Voir sur Google Maps
-                    </a>
-                </div>
-            `;
+        var markerIcon = L.divIcon({
+            className: '',
+            html: '<div class="map-marker"><div class="map-marker__dot"></div><div class="map-marker__pulse"></div></div>',
+            iconSize: [40, 40],
+            iconAnchor: [20, 20]
+        });
+
+        L.marker([lat, lng], { icon: markerIcon }).addTo(map);
+
+        setTimeout(function () { map.invalidateSize(); }, 400);
     }
-  }
-}
 
-// Глобальна функція для Google Maps
-window.initMap = initMap;
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initMap);
+    } else {
+        initMap();
+    }
+
+    const IMAGES = [
+        { src: 'images/terasse.webp',  caption: 'Notre terrasse' },
+        { src: 'images/terasse2.webp', caption: 'Notre terrasse' }
+    ];
+
+    const lb      = document.getElementById('terraceLightbox');
+    const lbImg   = document.getElementById('terraceLbImg');
+    const lbCnt   = document.getElementById('terraceLbCounter');
+    const lbClose = document.getElementById('terraceLbClose');
+    const lbPrev  = document.getElementById('terraceLbPrev');
+    const lbNext  = document.getElementById('terraceLbNext');
+
+    if (!lb) return;
+
+    let current = 0;
+
+    function show(index) {
+        current = index;
+        lbImg.classList.add('is-loading');
+        const tmp = new Image();
+        tmp.onload = function () {
+            lbImg.src = IMAGES[index].src;
+            lbImg.alt = IMAGES[index].caption;
+            lbImg.classList.remove('is-loading');
+        };
+        tmp.src = IMAGES[index].src;
+        lbCnt.textContent = (index + 1) + ' / ' + IMAGES.length;
+        lbPrev.disabled = index === 0;
+        lbNext.disabled = index === IMAGES.length - 1;
+    }
+
+    function open(index) {
+        show(index);
+        lb.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+        lbClose.focus();
+    }
+
+    function close() {
+        lb.classList.remove('is-open');
+        document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('[data-terrace]').forEach(function (el) {
+        el.addEventListener('click', function () {
+            open(parseInt(el.dataset.terrace));
+        });
+    });
+
+    lbClose.addEventListener('click', close);
+    lbPrev.addEventListener('click', function () { if (current > 0) show(current - 1); });
+    lbNext.addEventListener('click', function () { if (current < IMAGES.length - 1) show(current + 1); });
+
+    lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
+
+    document.addEventListener('keydown', function (e) {
+        if (!lb.classList.contains('is-open')) return;
+        if (e.key === 'ArrowLeft')  { if (current > 0) show(current - 1); }
+        if (e.key === 'ArrowRight') { if (current < IMAGES.length - 1) show(current + 1); }
+        if (e.key === 'Escape')     close();
+    });
+
+    let touchX = 0;
+    lb.addEventListener('touchstart', function (e) { touchX = e.changedTouches[0].screenX; }, { passive: true });
+    lb.addEventListener('touchend', function (e) {
+        const dx = e.changedTouches[0].screenX - touchX;
+        if (Math.abs(dx) > 50) { dx < 0 ? (current < IMAGES.length - 1 && show(current + 1)) : (current > 0 && show(current - 1)); }
+    }, { passive: true });
+
+}());
