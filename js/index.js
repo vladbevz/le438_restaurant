@@ -41,9 +41,53 @@
     }
 
     const IMAGES = [
+        { src: 'images/terasse5.webp', caption: 'Notre terrasse' },
+        { src: 'images/terasse6.webp', caption: 'Notre terrasse' },
         { src: 'images/terasse.webp',  caption: 'Notre terrasse' },
-        { src: 'images/terasse2.webp', caption: 'Notre terrasse' }
+        { src: 'images/terasse2.webp', caption: 'Notre terrasse' },
+        { src: 'images/terasse3.webp', caption: 'Notre terrasse' },
+        { src: 'images/terasse4.webp', caption: 'Notre terrasse' }
     ];
+
+    /* ===== TERRACE SLIDER ===== */
+    var track    = document.querySelector('.terrace__track');
+    var prevBtn  = document.getElementById('terracePrev');
+    var nextBtn  = document.getElementById('terraceNext');
+    var dotsEl   = document.getElementById('terraceDots');
+
+    if (track && prevBtn && nextBtn && dotsEl) {
+        var slideCount = IMAGES.length;
+        var slideIndex = 0;
+
+        IMAGES.forEach(function(_, i) {
+            var dot = document.createElement('button');
+            dot.className = 'terrace__dot' + (i === 0 ? ' is-active' : '');
+            dot.setAttribute('aria-label', 'Photo ' + (i + 1));
+            dot.addEventListener('click', function() { goTo(i); });
+            dotsEl.appendChild(dot);
+        });
+
+        function goTo(idx) {
+            slideIndex = idx;
+            track.style.transform = 'translateX(-' + idx * 100 + '%)';
+            document.querySelectorAll('.terrace__dot').forEach(function(d, i) {
+                d.classList.toggle('is-active', i === idx);
+            });
+            prevBtn.disabled = idx === 0;
+            nextBtn.disabled = idx === slideCount - 1;
+        }
+
+        prevBtn.addEventListener('click', function() { if (slideIndex > 0) goTo(slideIndex - 1); });
+        nextBtn.addEventListener('click', function() { if (slideIndex < slideCount - 1) goTo(slideIndex + 1); });
+        prevBtn.disabled = true;
+
+        var sliderTouchX = 0;
+        track.addEventListener('touchstart', function(e) { sliderTouchX = e.changedTouches[0].screenX; }, { passive: true });
+        track.addEventListener('touchend', function(e) {
+            var dx = e.changedTouches[0].screenX - sliderTouchX;
+            if (Math.abs(dx) > 40) { dx < 0 ? (slideIndex < slideCount - 1 && goTo(slideIndex + 1)) : (slideIndex > 0 && goTo(slideIndex - 1)); }
+        }, { passive: true });
+    }
 
     const lb      = document.getElementById('terraceLightbox');
     const lbImg   = document.getElementById('terraceLbImg');

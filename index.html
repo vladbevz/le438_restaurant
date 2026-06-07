@@ -218,15 +218,36 @@
                     Notre <em>terrasse</em>
                 </h2>
                 <div class="terrace__wrap reveal reveal--delay-1">
-                    <div class="terrace__photos">
-                        <div class="terrace__photo-main" data-terrace="0">
-                            <img src="images/terasse.webp" alt="Notre terrasse" class="terrace__img">
-                            <span class="terrace__hint"><i class="fas fa-expand-alt"></i> Agrandir</span>
+                    <div class="terrace__slider">
+                        <div class="terrace__track">
+                            <div class="terrace__slide" data-terrace="0">
+                                <img src="images/terasse5.webp" alt="Notre terrasse" class="terrace__img">
+                                <span class="terrace__hint"><i class="fas fa-expand-alt"></i> Agrandir</span>
+                            </div>
+                            <div class="terrace__slide" data-terrace="1">
+                                <img src="images/terasse6.webp" alt="Notre terrasse" class="terrace__img">
+                                <span class="terrace__hint"><i class="fas fa-expand-alt"></i> Agrandir</span>
+                            </div>
+                            <div class="terrace__slide" data-terrace="2">
+                                <img src="images/terasse.webp" alt="Notre terrasse" class="terrace__img">
+                                <span class="terrace__hint"><i class="fas fa-expand-alt"></i> Agrandir</span>
+                            </div>
+                            <div class="terrace__slide" data-terrace="3">
+                                <img src="images/terasse2.webp" alt="Notre terrasse" class="terrace__img">
+                                <span class="terrace__hint"><i class="fas fa-expand-alt"></i> Agrandir</span>
+                            </div>
+                            <div class="terrace__slide" data-terrace="4">
+                                <img src="images/terasse3.webp" alt="Notre terrasse" class="terrace__img">
+                                <span class="terrace__hint"><i class="fas fa-expand-alt"></i> Agrandir</span>
+                            </div>
+                            <div class="terrace__slide" data-terrace="5">
+                                <img src="images/terasse4.webp" alt="Notre terrasse" class="terrace__img">
+                                <span class="terrace__hint"><i class="fas fa-expand-alt"></i> Agrandir</span>
+                            </div>
                         </div>
-                        <div class="terrace__photo-side" data-terrace="1">
-                            <img src="images/terasse2.webp" alt="Notre terrasse" class="terrace__img">
-                            <span class="terrace__hint"><i class="fas fa-expand-alt"></i> Agrandir</span>
-                        </div>
+                        <button class="terrace__btn terrace__btn--prev" id="terracePrev" aria-label="Photo précédente"><i class="fas fa-chevron-left"></i></button>
+                        <button class="terrace__btn terrace__btn--next" id="terraceNext" aria-label="Photo suivante"><i class="fas fa-chevron-right"></i></button>
+                        <div class="terrace__dots" id="terraceDots"></div>
                     </div>
                 </div>
             </div>

@@ -1,5 +1,6 @@
 /* ===== MENU PAGE ===== */
 .menu-page { padding-top: var(--header-height); background: var(--bg); }
+.menu-page > .container { padding-top: 52px; }
 
 /* ===== HEAD ===== */
 .menu-head {
