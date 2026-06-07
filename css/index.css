@@ -35,7 +35,7 @@
 .hero__visual {
     position: relative; overflow: hidden;
     padding-top: var(--header-height);
-    background-image: url('../images/hero-restaurant.webp');
+    background-image: url('../images/files/hero-restaurant.jpg');
     background-position: top center;
     background-size: cover;
     background-repeat: no-repeat;
