@@ -51,4 +51,15 @@
             if (e.key === 'Escape' && isOpen()) closeDrawer();
         });
     });
+
+    /* ── Scroll to top ── */
+    var scrollBtn = document.getElementById('scrollTop');
+    if (scrollBtn) {
+        window.addEventListener('scroll', function () {
+            scrollBtn.classList.toggle('is-visible', window.scrollY > 400);
+        }, { passive: true });
+        scrollBtn.addEventListener('click', function () {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
 }());
