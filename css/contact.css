@@ -43,7 +43,7 @@
 }
 .contact-call__text-inner .eyebrow { justify-content: flex-start; margin-bottom: 18px; }
 .contact-call__visual {
-    background: url('../images/files/contact-appel.jpg') center / cover no-repeat;
+    background: url('../images/contact-appel.webp') center / cover no-repeat;
 }
 
 .contact-call__phone {
