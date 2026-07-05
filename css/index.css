@@ -22,7 +22,7 @@
     font-size: 1.05rem; letter-spacing: 2.5px;
     color: var(--ink-muted); margin-bottom: 40px;
 }
-.hero__actions { display: flex; gap: 12px; flex-wrap: wrap; }
+.hero__actions { display: flex; gap: 12px; flex-wrap: nowrap; }
 
 .hero__logo {
     width: clamp(240px, 32vw, 400px); height: auto;
