@@ -83,6 +83,7 @@ p { font-family: 'Montserrat', sans-serif; }
     font-family: 'Montserrat', sans-serif;
     font-weight: 600; font-size: 0.78rem;
     text-transform: uppercase; letter-spacing: 2px;
+    white-space: nowrap;
     cursor: pointer; border: 1.5px solid var(--ink);
     background: transparent; color: var(--ink);
     position: relative; overflow: hidden; z-index: 1;
