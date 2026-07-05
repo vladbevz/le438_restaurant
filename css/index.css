@@ -40,7 +40,6 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-origin: content-box;
-    filter: saturate(.88) brightness(.97);
 }
 .hero__img { display: none; }
 
@@ -134,13 +133,11 @@
 .showcase__photo-wrap { aspect-ratio: 3/4; overflow: hidden; }
 .showcase__photo {
     width: 100%; height: 100%; object-fit: cover;
-    transition: transform .55s ease, filter .4s ease;
-    filter: saturate(.82) brightness(.97);
+    transition: transform .55s ease;
     display: block;
 }
 .showcase__card:hover .showcase__photo {
     transform: scale(1.07);
-    filter: saturate(.92) brightness(1.01);
 }
 .showcase__info {
     padding: 16px 16px 18px;
@@ -255,12 +252,10 @@
 .terrace__img {
     width: 100%; height: 100%;
     object-fit: cover; display: block;
-    filter: saturate(.88) brightness(.97);
-    transition: transform .55s ease, filter .4s ease;
+    transition: transform .55s ease;
 }
 .terrace__slide:hover .terrace__img {
     transform: scale(1.03);
-    filter: saturate(.95) brightness(1.01);
 }
 .terrace__hint {
     position: absolute; bottom: 0; left: 0; right: 0;
@@ -335,7 +330,6 @@
 .terrace-lightbox__img {
     width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block;
     border: 1px solid var(--border);
-    filter: saturate(.88) brightness(.97);
     transition: opacity .25s ease;
 }
 .terrace-lightbox__img.is-loading { opacity: 0; }
