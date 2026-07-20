@@ -41,21 +41,18 @@
     }
 
     const IMAGES = [
-        { src: 'images/terasse5.webp',  caption: 'Notre terrasse' },
-        { src: 'images/terasse6.webp',  caption: 'Notre terrasse' },
         { src: 'images/terasse1.webp',  caption: 'Notre terrasse' },
         { src: 'images/terasse2.webp',  caption: 'Notre terrasse' },
         { src: 'images/terasse3.webp',  caption: 'Notre terrasse' },
         { src: 'images/terasse4.webp',  caption: 'Notre terrasse' },
+        { src: 'images/terasse5.webp',  caption: 'Notre terrasse' },
+        { src: 'images/terasse6.webp',  caption: 'Notre terrasse' },
         { src: 'images/terasse7.webp',  caption: 'Notre terrasse' },
         { src: 'images/terasse8.webp',  caption: 'Notre terrasse' },
         { src: 'images/terasse9.webp',  caption: 'Notre terrasse' },
         { src: 'images/terasse10.webp', caption: 'Notre terrasse' },
         { src: 'images/terasse11.webp', caption: 'Notre terrasse' },
-        { src: 'images/terasse12.webp', caption: 'Notre terrasse' },
-        { src: 'images/terasse13.webp', caption: 'Notre terrasse' },
-        { src: 'images/terasse14.webp', caption: 'Notre terrasse' },
-        { src: 'images/terasse15.webp', caption: 'Notre terrasse' }
+        { src: 'images/terasse12.webp', caption: 'Notre terrasse' }
     ];
 
     /* ===== TERRACE SLIDER ===== */
