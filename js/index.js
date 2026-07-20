@@ -41,12 +41,12 @@
     }
 
     const IMAGES = [
+        { src: 'images/terasse5.webp',  caption: 'Notre terrasse' },
+        { src: 'images/terasse6.webp',  caption: 'Notre terrasse' },
         { src: 'images/terasse1.webp',  caption: 'Notre terrasse' },
         { src: 'images/terasse2.webp',  caption: 'Notre terrasse' },
         { src: 'images/terasse3.webp',  caption: 'Notre terrasse' },
         { src: 'images/terasse4.webp',  caption: 'Notre terrasse' },
-        { src: 'images/terasse5.webp',  caption: 'Notre terrasse' },
-        { src: 'images/terasse6.webp',  caption: 'Notre terrasse' },
         { src: 'images/terasse7.webp',  caption: 'Notre terrasse' },
         { src: 'images/terasse8.webp',  caption: 'Notre terrasse' },
         { src: 'images/terasse9.webp',  caption: 'Notre terrasse' },
